@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # 'guardian',
     # 'easy_thumbnails',
     # 'accounts',
-    'DFRSS.apps.DfrssConfig'
+    'DFRSS.apps.DfrssConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,11 @@ STATIC_URL = '/static/'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'yourgmailaccount@gmail.com'
 # EMAIL_HOST_PASSWORD = 'yourgmailpassword'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
